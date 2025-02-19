@@ -21,7 +21,7 @@ RUN if [ -f /etc/apt/sources.list ]; then \
         apt-get update; \
     fi
 
-RUN apt-get update && apt-get build-dep numpy=1.26
+RUN apt-get update && apt-get build-dep numpy
 
 RUN useradd -m educator
 
