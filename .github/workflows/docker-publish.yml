@@ -1,3 +1,6 @@
+# publish releases
+# ref : https://github.com/cicirello/pyaction/
+
 name: Docker Publish
 
 on:
