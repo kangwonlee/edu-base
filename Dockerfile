@@ -9,7 +9,7 @@ LABEL maintainer="kangwon@gmail.com" \
     org.opencontainers.image.source="https://github.com/kangwonlee/edu-base" \
     org.opencontainers.image.title="edu-base" 
 
-RUN apt-get update && apt-get install -y apt-utils gcc pkg-config
+RUN apt-get update && apt-get install -y apt-utils gcc g++ pkg-config
 
 RUN useradd -m educator
 
