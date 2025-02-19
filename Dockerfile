@@ -21,7 +21,7 @@ RUN if [ -f /etc/apt/sources.list ]; then \
         apt-get update; \
     fi
 
-RUN apt-get update && apt-get build-dep -y numpy
+RUN apt-get update && apt-get build-dep -y numpy cmake
 
 RUN useradd -m educator
 
