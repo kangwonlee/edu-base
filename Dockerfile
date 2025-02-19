@@ -9,6 +9,8 @@ LABEL maintainer="kangwon@gmail.com" \
     org.opencontainers.image.source="https://github.com/kangwonlee/edu-base" \
     org.opencontainers.image.title="edu-base" 
 
+RUN apt-get update && apt-get install -y gfortran
+
 RUN useradd -m educator
 
 # Switch to the non-root user
