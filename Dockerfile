@@ -11,8 +11,16 @@ LABEL maintainer="kangwon@gmail.com" \
 
 RUN apt-get update && apt-get install -y build-essential gfortran pkg-config
 
-# RUN cp /etc/apt/sources.list /etc/apt/sources.list~
-# RUN sed -Ei 's/^# deb-src /deb-src /' /etc/apt/sources.list
+# Ensure deb-src lines are present in sources.list
+RUN if [ -f /etc/apt/sources.list ]; then \
+        sed -i 's/^# deb-src /deb-src /' /etc/apt/sources.list && \
+        apt-get update; \
+    else \
+        echo "deb http://deb.debian.org/debian bullseye main contrib non-free" >> /etc/apt/sources.list && \
+        echo "deb-src http://deb.debian.org/debian bullseye main contrib non-free" >> /etc/apt/sources.list && \
+        apt-get update; \
+    fi
+
 RUN apt-get update && apt-get build-dep numpy=1.26
 
 RUN useradd -m educator
