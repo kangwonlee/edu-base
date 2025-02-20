@@ -21,7 +21,7 @@ RUN if [ -f /etc/apt/sources.list ]; then \
         apt-get update; \
     fi
 
-RUN apt-get update && apt-get build-dep -y cmake scipy
+RUN apt-get update && apt-get build-dep -y cmake scipy && apt-get clean
 
 RUN useradd -m educator
 

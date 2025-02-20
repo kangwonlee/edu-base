@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - started the project
 - added Dockerfile
 - added publication yaml files
+- `apt-get clean` to reduce image size
 
 ### Changed
 
