@@ -9,7 +9,14 @@ LABEL maintainer="kangwon@gmail.com" \
     org.opencontainers.image.source="https://github.com/kangwonlee/edu-base" \
     org.opencontainers.image.title="edu-base" 
 
-RUN apt-get update && apt-get install -y build-essential gfortran pkg-config cmake libxsimd-dev libblas-dev
+RUN apt-get update && \
+ apt-get install -y build-essential \
+ cmake \
+ gfortran \
+ libblas-dev \
+ libxsimd-dev \
+ pkg-config && \
+ apt-get clean
 
 RUN useradd -m educator
 
