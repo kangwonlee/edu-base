@@ -1,7 +1,7 @@
 # Copyright (c) 2025 Kangwon Lee
 # Source repository: https://github.com/kangwonlee/edu-base
 
-FROM python:3.11.11-slim
+FROM python:3.11.11-alpine
 
 LABEL maintainer="kangwon@gmail.com" \
     org.opencontainers.image.description="A Docker image with Python and pytest" \
