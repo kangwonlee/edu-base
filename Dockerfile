@@ -9,10 +9,7 @@ LABEL maintainer="kangwon@gmail.com" \
     org.opencontainers.image.source="https://github.com/kangwonlee/edu-base" \
     org.opencontainers.image.title="edu-base" 
 
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-    git \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache git
 
 RUN useradd -u 1001 -m runner
 
