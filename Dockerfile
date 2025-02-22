@@ -25,3 +25,10 @@ COPY requirements.txt /requirements.txt
 
 RUN python3 -m pip install --upgrade pip
 RUN python3 -m pip install --no-cache-dir --user --requirement /requirements.txt
+
+RUN git clone https://github.com/kangwonlee/gemini-python-tutor/ /temp/ &&\
+    python3 -m pip install --no-cache-dir --user --requirement /temp/requirements.txt
+
+COPY /temp/*.py /app/ai_tutor/*.py
+
+RUN rm -rf /temp/*
