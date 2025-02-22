@@ -11,7 +11,7 @@ LABEL maintainer="kangwon@gmail.com" \
 
 RUN apk add --no-cache git
 
-RUN adduser runner --uid 1001
+RUN adduser runner --uid 1001 --disabled-password
 
 # Switch to the non-root user
 USER runner
