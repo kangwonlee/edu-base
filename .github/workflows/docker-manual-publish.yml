@@ -31,6 +31,7 @@ jobs:
           echo "version=${VERSION}" >> $GITHUB_OUTPUT
           echo "dockerhub_image=${DOCKERHUB_IMAGE}" >> $GITHUB_OUTPUT
           echo "ghcr_image=${GHCR_IMAGE}" >> $GITHUB_OUTPUT
+          echo "TAGS = ${TAGS}"
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
