@@ -1,7 +1,7 @@
 # Copyright (c) 2025 Kangwon Lee
 # Source repository: https://github.com/kangwonlee/edu-base
 
-FROM ghcr.io/astral-sh/uv:python3.11-alpine
+FROM ghcr.io/astral-sh/uv:python3.13-alpine
 
 LABEL maintainer="kangwon@gmail.com" \
     org.opencontainers.image.description="A Docker image with Python and pytest" \
@@ -20,7 +20,7 @@ WORKDIR /app
 
 COPY pyproject.toml /app/pyproject.toml
 
-RUN git clone --depth=1 --branch v0.2.1 https://github.com/kangwonlee/gemini-python-tutor /app/temp/
+RUN git clone --depth=1 --branch v0.3.13 https://github.com/kangwonlee/gemini-python-tutor /app/temp/
 
 RUN uv pip install --no-cache-dir --system /app/ \
     && uv pip install --no-cache-dir --system --requirement /app/temp/requirements.txt \
