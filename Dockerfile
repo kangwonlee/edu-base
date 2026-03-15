@@ -11,11 +11,6 @@ LABEL maintainer="kangwon@gmail.com" \
 
 RUN apk add --no-cache git
 
-RUN adduser runner --uid 1001 --disabled-password
-
-# Switch to the non-root user
-USER runner
-
 WORKDIR /app
 
 COPY pyproject.toml /app/pyproject.toml
@@ -28,5 +23,10 @@ RUN uv pip install --no-cache-dir --system /app/ \
     && mv /app/temp/*.py /app/ai_tutor || true \
     && mv /app/temp/locale/ /app/ai_tutor/locale/ \
     && rm -rf /app/temp
+
+RUN adduser runner --uid 1001 --disabled-password
+
+# Switch to the non-root user
+USER runner
 
 CMD ["python3", "-m", "pytest", "--version"]
